@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-nstsov)sh945a_ot%5sihb#el)h^ou5e2cwghb+!wlf730r5l8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['*']
 
@@ -135,8 +135,9 @@ MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_ACCESS_KEY_ID='AKIAXJSTZKFHUY3CWEUE'
-AWS_SECRET_ACCESS_KEY='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'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME='kh-likelion-django-lesson'
 AWS_S3_SIGNITURE_VERSION='s3v4'
 AWS_S3_REGION_NAME='ap-northeast-2'
